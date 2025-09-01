@@ -1,0 +1,51 @@
+<!-- dashboard/web_interface/templates/analytics.html -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>التحليلات - نظام الري الذكي</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>التحليلات الزراعية</h1>
+        
+        <div class="charts">
+            <div class="chart-container">
+                <canvas id="soil-moisture-chart"></canvas>
+                <h3>رطوبة التربة خلال 7 أيام</h3>
+            </div>
+            
+            <div class="chart-container">
+                <canvas id="water-consumption-chart"></canvas>
+                <h3>استهلاك المياه اليومي</h3>
+            </div>
+            
+            <div class="chart-container">
+                <canvas id="energy-production-chart"></canvas>
+                <h3>إنتاج الطاقة الشمسية</h3>
+            </div>
+        </div>
+        
+        <div class="data-table">
+            <h2>إحصائيات المحاصيل</h2>
+            <table id="crop-stats">
+                <thead>
+                    <tr>
+                        <th>نوع المحصول</th>
+                        <th>المساحة (هكتار)</th>
+                        <th>متوسط استهلاك المياه</th>
+                        <th>الإنتاجية</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- سيتم ملؤها ديناميكياً -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/analytics.js') }}"></script>
+</body>
+</html>

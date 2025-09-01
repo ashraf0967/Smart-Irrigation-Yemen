@@ -1,0 +1,34 @@
+{
+  "id": 2,
+  "title": "التحليلات الزراعية",
+  "panels": [
+    {
+      "type": "heatmap",
+      "title": "توزيع رطوبة التربة",
+      "fieldConfig": {
+        "defaults": {
+          "color": {"mode": "scheme", "scheme": "YlOrRd"}
+        }
+      }
+    },
+    {
+      "type": "graph",
+      "title": "مقارنة كفاءة الري",
+      "fieldConfig": {
+        "defaults": {
+          "color": {"mode": "palette-classic"}
+        }
+      }
+    },
+    {
+      "type": "table",
+      "title": "إحصائيات المحاصيل",
+      "fieldConfig": {
+        "defaults": {
+          "align": "center"
+        }
+      }
+    }
+  ],
+  "refresh": "1m"
+}

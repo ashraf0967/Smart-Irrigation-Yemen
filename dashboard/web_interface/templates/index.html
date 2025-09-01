@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام الري الذكي - اليمن</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>نظام الري الذكي</h1>
+        <p>مراقبة وتحكم في الوقت الحقيقي</p>
+    </header>
+
+    <div class="container">
+        <section class="dashboard-section">
+            <h2>حالة الحساسات</h2>
+            <div class="sensors-grid">
+                <div class="sensor-card">
+                    <h3>رطوبة التربة</h3>
+                    <div class="gauge" id="soil-gauge"></div>
+                    <p id="soil-value">--%</p>
+                </div>
+                
+                <div class="sensor-card">
+                    <h3>درجة الحرارة</h3>
+                    <div class="gauge" id="temp-gauge"></div>
+                    <p id="temp-value">--°C</p>
+                </div>
+                
+                <div class="sensor-card">
+                    <h3>مستوى المياه</h3>
+                    <div class="gauge" id="water-gauge"></div>
+                    <p id="water-value">--%</p>
+                </div>
+                
+                <div class="sensor-card">
+                    <h3>حالة البطارية</h3>
+                    <div class="gauge" id="battery-gauge"></div>
+                    <p id="battery-value">--%</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="control-section">
+            <h2>التحكم في الري</h2>
+            <div class="valve-controls">
+                <div class="valve-card">
+                    <h3>صمام المنطقة 1</h3>
+                    <p>حالة: <span id="valve1-status">غير معروف</span></p>
+                    <div class="btn-group">
+                        <button class="btn btn-success" onclick="controlValve(1, 'on')">تشغيل</button>
+                        <button class="btn btn-danger" onclick="controlValve(1, 'off')">إيقاف</button>
+                    </div>
+                    <div class="duration-control">
+                        <label>المدة (دقائق):</label>
+                        <input type="number" id="valve1-duration" min="1" max="30" value="5">
+                    </div>
+                </div>
+                
+                <!-- تكرار لنفس التصميم للصمامات الأخرى -->
+            </div>
+        </section>
+
+        <section class="analytics-section">
+            <h2>التحليلات التاريخية</h2>
+            <div class="chart-container">
+                <canvas id="soil-moisture-chart"></canvas>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>نظام الري الذكي - اليمن &copy; 2023</p>
+        <p>آخر تحديث: <span id="last-update">--</span></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

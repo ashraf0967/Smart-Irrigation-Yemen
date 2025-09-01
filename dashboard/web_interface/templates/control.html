@@ -1,0 +1,49 @@
+<!-- dashboard/web_interface/templates/control.html -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>لوحة التحكم - نظام الري الذكي</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container" style="max-width: 1200px; margin: 0 auto;">
+        <h1>التحكم في نظام الري</h1>
+        
+        <div class="valve-control">
+            <h2>التحكم في الصمامات</h2>
+            <div class="valve-list">
+                <!-- سيتم ملؤها ديناميكياً بـ JavaScript -->
+            </div>
+        </div>
+        
+        <div class="scheduler">
+            <h2>جدولة الري</h2>
+            <form id="schedule-form">
+                <label for="valve-select">اختر الصمام:</label>
+                <select id="valve-select">
+                    <option value="1">الصمام 1</option>
+                    <option value="2">الصمام 2</option>
+                </select>
+                
+                <label for="schedule-time">الوقت:</label>
+                <input type="time" id="schedule-time" required>
+                
+                <label for="duration">المدة (دقائق):</label>
+                <input type="number" id="duration" min="1" max="60" value="15" required>
+                
+                <button type="submit">إضافة جدول</button>
+            </form>
+            
+            <div class="schedules-list">
+                <h3>الجداول النشطة</h3>
+                <ul id="active-schedules">
+                    <!-- سيتم ملؤها ديناميكياً -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/control.js') }}"></script>
+</body>
+</html>

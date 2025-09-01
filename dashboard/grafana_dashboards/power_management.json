@@ -1,0 +1,41 @@
+{
+  "id": 4,
+  "title": "إدارة الطاقة",
+  "panels": [
+    {
+      "type": "gauge",
+      "title": "حالة البطارية",
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {"color": "red", "value": 0},
+              {"color": "orange", "value": 20},
+              {"color": "green", "value": 60}
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "graph",
+      "title": "إنتاج الطاقة الشمسية",
+      "fieldConfig": {
+        "defaults": {
+          "color": {"mode": "continuous-Greens"}
+        }
+      }
+    },
+    {
+      "type": "alertlist",
+      "title": "تنبيهات الطاقة",
+      "fieldConfig": {
+        "defaults": {
+          "colorMode": "background"
+        }
+      }
+    }
+  ],
+  "refresh": "1m"
+}

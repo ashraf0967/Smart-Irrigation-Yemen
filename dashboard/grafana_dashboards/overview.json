@@ -1,0 +1,41 @@
+{
+  "id": 1,
+  "title": "نظرة عامة على نظام الري",
+  "panels": [
+    {
+      "type": "gauge",
+      "title": "رطوبة التربة",
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {"color": "red", "value": 0},
+              {"color": "yellow", "value": 30},
+              {"color": "green", "value": 50}
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "stat",
+      "title": "الصمامات النشطة",
+      "fieldConfig": {
+        "defaults": {
+          "colorMode": "value"
+        }
+      }
+    },
+    {
+      "type": "graph",
+      "title": "استهلاك المياه اليومي",
+      "fieldConfig": {
+        "defaults": {
+          "color": {"mode": "continuous-BlPu"}
+        }
+      }
+    }
+  ],
+  "refresh": "30s"
+}

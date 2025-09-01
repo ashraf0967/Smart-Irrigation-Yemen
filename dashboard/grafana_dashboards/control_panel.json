@@ -1,0 +1,57 @@
+{
+  "id": 3,
+  "title": "لوحة تحكم الري الذكي - اليمن",
+  "description": "لوحة المراقبة والتحكم في نظام الري",
+  "style": "dark",
+  "timezone": "Asia/Aden",
+  "panels": [
+    {
+      "type": "gauge",
+      "title": "رطوبة التربة",
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {"color": "red", "value": 0},
+              {"color": "yellow", "value": 30},
+              {"color": "green", "value": 50}
+            ]
+          }
+        }
+      },
+      "options": {
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true
+      }
+    },
+    {
+      "type": "graph",
+      "title": "اتجاه رطوبة التربة",
+      "fieldConfig": {
+        "defaults": {
+          "color": {"mode": "continuous-GrYlRd"}
+        }
+      }
+    },
+    {
+      "type": "stat",
+      "title": "حالة الري الحالية",
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none"
+      }
+    },
+    {
+      "type": "control",
+      "title": "التحكم اليدوي",
+      "options": {
+        "type": "button",
+        "text": "تشغيل/إيقاف الري",
+        "command": "/api/control/valve"
+      }
+    }
+  ],
+  "language": "ar",
+  "refresh": "30s"
+}
